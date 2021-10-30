@@ -1,5 +1,6 @@
 package cn.codepure.jjwtdemo;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -36,4 +37,16 @@ class JjwtdemoApplicationTests {
         System.out.println(Base64Codec.BASE64.decodeToString(split[2]));
     }
 
+    @Test
+    public void testParseToken() {
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ODg4Iiwic3ViIjoiUm9zZSIsImlhdCI6MTYzNTYwNTYzNH0.hSlCKML0jpx_76O5xUd6j4-Cwu1ffrv27L2K6J6-5mQ";
+        // 解析Token 获取负载中声明的对象
+        Claims claims = Jwts.parser()
+                .setSigningKey("xxxxxxx")
+                .parseClaimsJws(token)
+                .getBody();
+        System.out.println("id:" + claims.getId());
+        System.out.println("subject:" + claims.getSubject());
+        System.out.println("issuedAt:" + claims.getIssuedAt());
+    }
 }
