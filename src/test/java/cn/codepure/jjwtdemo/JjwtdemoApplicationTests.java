@@ -47,7 +47,7 @@ class JjwtdemoApplicationTests {
      */
     @Test
     public void testParseToken() {
-        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ODg4Iiwic3ViIjoiUm9zZSIsImlhdCI6MTYzNTYwNTYzNH0.hSlCKML0jpx_76O5xUd6j4-Cwu1ffrv27L2K6J6-5mQ";
+        String token = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ODg4Iiwic3ViIjoiUm9zZSIsImlhdCI6MTYzNTc1MTUwMX0.7mfIfEYzRTrTzTBOgoLjIjl-Dubf74TghlYkS6iDfo4";
         // 解析Token 获取负载中声明的对象
         Claims claims = Jwts.parser()
                 .setSigningKey("xxxxxxx")
